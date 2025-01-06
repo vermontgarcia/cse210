@@ -1,4 +1,7 @@
 # cse210-ww-student-template
-This is the starter code for students in the worldwide content version of CSE 210.
 
-This repository contains the starter code for many different projects. They are arranged folders by week. There is also an an empty sandbox project that can be used to play around with any concept you would like.
+CSE 210 Programming With Classes.
+
+This repository contains the starter code for many different projects. Vermont Garcia is the code author for this newer code. Code is arranged by folders and by week.
+
+There is also an an empty sandbox project that is intended to be used to play around with any concept required during this course.
