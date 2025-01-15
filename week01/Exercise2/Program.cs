@@ -45,7 +45,7 @@ class Program
         // Presenting evaluation results to the user
         Console.WriteLine("");
         Console.WriteLine($"Your letter grade is \"{letterGrade}{sign}\"");
-        if (grade > 70)
+        if (grade >= 70)
         {
             Console.WriteLine("Congratilations, you passed the class!");
         }
