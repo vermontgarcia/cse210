@@ -68,7 +68,7 @@ public class Journal
     foreach (string line in newLines)
     {
       string[] parts = line.Split(" - ");
-      Entry entry = new Entry(parts[1], parts[1], parts[2]);
+      Entry entry = new Entry(parts[0], parts[1], parts[2]);
       _entries.Add(entry);
     }
   }
