@@ -31,6 +31,7 @@ public class Scripture
   }
 
   public void HideRandomWords(int numberToHide)
+  // Exceeding Requirements
   // Hide random words, It validates if the word is already hidden.
   // Choose a different to hide if already hidden  
   {

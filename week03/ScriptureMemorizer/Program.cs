@@ -2,7 +2,7 @@ using System;
 
 class Program
 {
-    static private List<Scripture> _scriptures = new();
+    static private List<Scripture> _scriptures = [];
     static void Main(string[] args)
     {
         Console.Clear();
@@ -10,6 +10,7 @@ class Program
         Thread.Sleep(3000);
 
         /** 
+        Exceeding Requirements
         Scriptures Library
         */
 
@@ -54,6 +55,7 @@ class Program
         _scriptures.Add(scripture4);
 
         /**
+        Exceeding Requirements
         Select random scripture
         */
 
