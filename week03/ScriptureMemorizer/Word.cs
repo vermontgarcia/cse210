@@ -1,7 +1,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-public class Word
+public partial class Word
 {
   private string _word;
   private bool _isHidden;
@@ -31,7 +31,7 @@ public class Word
   {
     if (_isHidden)
     {
-      string hiddenWord = Regex.Replace(_word, "[a-zA-Z]", "_"); ;
+      string hiddenWord = WordRegex().Replace(_word, "_");
       return hiddenWord;
     }
     else
@@ -39,4 +39,7 @@ public class Word
       return _word;
     }
   }
+
+  [GeneratedRegex("[a-zA-Z]")]
+  private static partial Regex WordRegex();
 }
