@@ -39,7 +39,7 @@ public partial class Word
       return _word;
     }
   }
-
+  
   [GeneratedRegex("[a-zA-Z]")]
   private static partial Regex WordRegex();
 }
