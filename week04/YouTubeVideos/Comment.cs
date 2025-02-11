@@ -16,7 +16,7 @@ public class Comment
     return _name;
   }
 
-  public string GetUserNComment()
+  public string GetUserComment()
   {
     return _comment;
   }
