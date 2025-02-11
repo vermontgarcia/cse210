@@ -64,7 +64,6 @@ class Program
         {
             Console.Clear();
             Console.WriteLine(scripture.GetDisplayText());
-
             Console.WriteLine();
             Console.Write("Please press enter to continue and hide random words or type \"quit\" to finish: ");
             string option = Console.ReadLine();
@@ -76,14 +75,12 @@ class Program
             {
                 scripture.HideRandomWords(7);
             }
-
         } while (true);
-
     }
 
     static Scripture GetRandomScripture()
     {
-        Random _random = new Random();
+        Random _random = new();
         int randomIndex = _random.Next(_scriptures.Count);
         return _scriptures[randomIndex];
     }
