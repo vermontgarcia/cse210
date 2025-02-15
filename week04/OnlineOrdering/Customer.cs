@@ -30,4 +30,9 @@ public class Customer
   {
     return $"{_fName} {_lName}";
   }
+
+  public string GetShippingAddress()
+  {
+    return _address.GetAddressLabel();
+  }
 }
