@@ -20,11 +20,16 @@ public class Product
 
   public string GetPackingDetails()
   {
-    return $"{_id} - {_name} - {_quantity}";
+    return $"{_id}, {_name}, {_quantity}";
   }
 
   public double GetTotalCost()
   {
     return _price * _quantity;
+  }
+
+  public int GetId()
+  {
+    return _id;
   }
 }
