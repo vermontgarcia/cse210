@@ -3,7 +3,6 @@ public class Order
   private Customer _customer;
   private List<Product> _products;
 
-
   public Order(Customer customer)
   {
     _customer = customer;
@@ -36,16 +35,12 @@ public class Order
 
   public double GetTotalCost()
   {
-    double totalCost = 0;
+    double shippingCost = 35;
     if (_customer.IsUSALocated())
     {
-      totalCost += 5;
+      shippingCost = 5;
     }
-    else
-    {
-      totalCost += 35;
-    }
-    return _products.Sum(product => product.GetTotalCost()) + totalCost;
+    return _products.Sum(product => product.GetTotalCost()) + shippingCost;
   }
 
   public string GetPackingLabel()
