@@ -35,7 +35,12 @@ class Program
                     AddLogToTextFile(breathingActivity.GetEndingMessage());
                     break;
                 case 2:
-                    Console.WriteLine("Listing Activity");
+                    name = "Listing Activity";
+                    Console.WriteLine(name);
+                    description = "This activity will help you reflect on the good things in your life\nby having you list as many things as you can in a certain area.";
+                    ListingActivity listingActivity = new(name, description);
+                    listingActivity.StartActivity();
+                    AddLogToTextFile(listingActivity.GetEndingMessage());
                     break;
                 case 3:
                     name = "Reflecting Activity";
