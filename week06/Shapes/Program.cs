@@ -16,5 +16,12 @@ class Program
 
         Console.WriteLine(square.Color);
         Console.WriteLine(square.GetArea());
+
+        Rectangle rectangle = new(10, 15, "Yellow");
+
+        Console.WriteLine(rectangle.Color);
+        Console.WriteLine(rectangle.Width);
+        Console.WriteLine(rectangle.Length);
+        Console.WriteLine(rectangle.GetArea());
     }
 }
