@@ -4,7 +4,6 @@ public class ReflectingActivity : Activity
   private List<string> _questions = [];
   private static readonly Random _random = new Random();
 
-
   public ReflectingActivity(string name, string description) : base(name, description)
   {
     _prompts = [
@@ -80,7 +79,7 @@ public class ReflectingActivity : Activity
   public void StartActivity()
   {
     base.DisplayStartingMessage();
-    base.Duration = GetActivityDuration(30);
+    base.SetActivityDuration(30);
     Console.Clear();
     GetReady();
     Console.WriteLine();

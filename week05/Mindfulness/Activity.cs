@@ -3,9 +3,9 @@ using System.Globalization;
 
 public class Activity
 {
-  string _name;
-  string _description;
-  int _duration = 0;
+  private string _name;
+  private string _description;
+  private int _duration = 0;
 
   public Activity(string name, string description)
   {
@@ -15,10 +15,6 @@ public class Activity
 
   public int Duration
   {
-    set
-    {
-      _duration = value;
-    }
 
     get
     {
@@ -82,7 +78,7 @@ public class Activity
     }
   }
 
-  public static int GetActivityDuration(int minDuration)
+  public void SetActivityDuration(int minDuration)
   {
     int duration = 0;
     do
@@ -102,7 +98,7 @@ public class Activity
         Console.WriteLine("Please enter a valid duration");
       }
     } while (duration == 0);
-    return duration;
+    _duration = duration;
   }
 
   public static void GetReady()

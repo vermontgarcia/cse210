@@ -5,14 +5,13 @@ public class BreathingActivity : Activity
   public void StartActivity()
   {
     base.DisplayStartingMessage();
-    int duration = GetActivityDuration(30);
-    base.Duration = duration;
+    SetActivityDuration(30);
     Console.Clear();
     GetReady();
     Console.WriteLine();
 
     DateTime startTime = DateTime.Now;
-    DateTime endTime = startTime.AddSeconds(duration);
+    DateTime endTime = startTime.AddSeconds(base.Duration);
 
     while (DateTime.Now < endTime)
     {
@@ -25,14 +24,14 @@ public class BreathingActivity : Activity
     Console.Clear();
   }
 
-  public static void BretheIn(int duration)
+  private static void BretheIn(int duration)
   {
     Console.Write("Breathe in... ");
     ShowCountDown(duration);
     Console.WriteLine();
   }
 
-  public static void BreatheOut(int duration)
+  private static void BreatheOut(int duration)
   {
     Console.Write("Breathe out... ");
     ShowCountDown(duration);

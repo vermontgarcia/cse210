@@ -54,7 +54,7 @@ public class ListingActivity : Activity
   public void StartActivity()
   {
     base.DisplayStartingMessage();
-    base.Duration = GetActivityDuration(20);
+    base.SetActivityDuration(20);
     Console.Clear();
     GetReady();
     Console.WriteLine();
