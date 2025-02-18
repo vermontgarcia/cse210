@@ -67,5 +67,4 @@ public class ListingActivity : Activity
     DisplayEndingMessage();
     Console.Clear();
   }
-
 }

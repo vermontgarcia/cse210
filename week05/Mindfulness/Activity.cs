@@ -15,7 +15,6 @@ public class Activity
 
   public int Duration
   {
-
     get
     {
       return _duration;

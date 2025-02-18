@@ -4,7 +4,7 @@ public class BreathingActivity : Activity
 
   public void StartActivity()
   {
-    base.DisplayStartingMessage();
+    DisplayStartingMessage();
     SetActivityDuration(30);
     Console.Clear();
     GetReady();
@@ -37,5 +37,4 @@ public class BreathingActivity : Activity
     ShowCountDown(duration);
     Console.WriteLine();
   }
-
 }

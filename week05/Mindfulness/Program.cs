@@ -1,6 +1,6 @@
 class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
         Console.Clear();
         Console.WriteLine("Welcome to Mindfulness Project.");
@@ -71,7 +71,7 @@ class Program
     }
 
     // Function to display menu
-    static void DisplayMenu()
+    private static void DisplayMenu()
     {
 
         string menu = @"
@@ -87,16 +87,8 @@ class Program
         Console.Write("What would you like to do? ");
     }
 
-    // Function to get user input
-    static string GetUserEntry(string prompt)
-    {
-        Console.Write($"{prompt} ");
-        string userInput = Console.ReadLine();
-        return userInput;
-    }
-
     // Function to write to TXT file and populate entries
-    static void AddLogToTextFile(string log)
+    private static void AddLogToTextFile(string log)
     // Exceeding Requirements: Add log to file after activity has been completed
     {
         string fileName = "logs.txt";
@@ -107,7 +99,7 @@ class Program
     }
 
     // Function to read from TXT file and populate entries
-    static void ShowLogsFromTexFile()
+    private static void ShowLogsFromTexFile()
     // Exceeding Requirements: Reading logs from file and display them to screen
     {
         string fileName = "logs.txt";
@@ -118,5 +110,4 @@ class Program
             Console.WriteLine(line);
         }
     }
-
 }
