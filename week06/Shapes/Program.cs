@@ -8,26 +8,19 @@ class Program
 
         Square square = new(12, "Red");
 
-        Console.WriteLine(square.Color);
-        Console.WriteLine(square.GetArea());
-
         square.Color = "Green";
         square.Side = 23.67;
 
-        Console.WriteLine(square.Color);
-        Console.WriteLine(square.GetArea());
-
         Rectangle rectangle = new(10, 15, "Yellow");
-
-        Console.WriteLine(rectangle.Color);
-        Console.WriteLine(rectangle.Width);
-        Console.WriteLine(rectangle.Length);
-        Console.WriteLine(rectangle.GetArea());
 
         Circle circle = new(4.5, "Black");
 
-        Console.WriteLine(circle.Radius);
-        Console.WriteLine(circle.GetArea());
+        List<Shape> shapes = [square, rectangle, circle];
 
+        foreach (Shape shape in shapes)
+        {
+            Console.WriteLine(shape.Color);
+            Console.WriteLine(shape.GetArea());
+        }
     }
 }
