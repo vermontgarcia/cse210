@@ -23,5 +23,11 @@ class Program
         Console.WriteLine(rectangle.Width);
         Console.WriteLine(rectangle.Length);
         Console.WriteLine(rectangle.GetArea());
+
+        Circle circle = new(4.5, "Black");
+
+        Console.WriteLine(circle.Radius);
+        Console.WriteLine(circle.GetArea());
+
     }
 }
