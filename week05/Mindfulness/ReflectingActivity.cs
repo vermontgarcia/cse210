@@ -31,13 +31,13 @@ public class ReflectingActivity : Activity
     ];
   }
 
-  public string GetRandomPrompt()
+  private string GetRandomPrompt()
   {
     int randomIndex = _random.Next(_prompts.Count);
     return _prompts[randomIndex];
   }
 
-  public string GetRandomQuestion()
+  private string GetRandomQuestion()
   // Exceeding Requirements: Remove question from the list to prevent displaying repeated question
   {
     if (_questions.Count == 0)
@@ -52,7 +52,7 @@ public class ReflectingActivity : Activity
     return selectedQuestion;
   }
 
-  public void DisplayPrompt()
+  private void DisplayPrompt()
   {
     string selectedPrompt = GetRandomPrompt();
     Console.WriteLine();
@@ -64,7 +64,7 @@ public class ReflectingActivity : Activity
     Console.ReadLine();
   }
 
-  public void DisplayQuestions()
+  private void DisplayQuestions()
   {
     DateTime startTime = DateTime.Now;
     DateTime endTime = startTime.AddSeconds(base.Duration);
