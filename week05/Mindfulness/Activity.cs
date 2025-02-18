@@ -51,7 +51,7 @@ public class Activity
 
   public static void ShowSpinner(int duration)
   {
-    List<string> spiner = ["| ", "/ ", "- ", "\\ ", "| "];
+    List<string> spiner = ["| ", "/ ", "- ", "\\ "];
     DateTime startTime = DateTime.Now;
     DateTime endTime = startTime.AddSeconds(duration);
 
