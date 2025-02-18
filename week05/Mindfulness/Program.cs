@@ -1,5 +1,3 @@
-using System;
-
 class Program
 {
     static void Main(string[] args)
@@ -7,10 +5,10 @@ class Program
         Console.Clear();
         Console.WriteLine("Welcome to Mindfulness Project.");
 
-        int choice = 0;
-
+        int choice;
         do
         {
+            // Exceeding Requirements: Handeling Exceptions when no valid option entered by user
             try
             {
                 DisplayMenu();
@@ -23,20 +21,42 @@ class Program
                 choice = 0;
             }
 
+            string name;
+            string description;
+
             switch (choice)
             {
                 case 1:
-                    Console.WriteLine("Breathing Activity");
+                    name = "Breathing Activity";
+                    Console.WriteLine(name);
+                    description = "This activity will help you relax by breathing in and out slowly. Focus only in your breathing.";
+                    BreathingActivity breathingActivity = new(name, description);
+                    breathingActivity.StartActivity();
+                    AddLogToTextFile(breathingActivity.GetEndingMessage());
                     break;
                 case 2:
                     Console.WriteLine("Listing Activity");
                     break;
                 case 3:
-                    Console.WriteLine("Reflecting Activity");
+                    name = "Reflecting Activity";
+                    Console.WriteLine(name);
+                    description = "This activity will help you reflect on times in your life when you have shown strength and resilience.\nThis will help you recognize the power you have and how you can use it in other aspects of your life.";
+                    ReflectingActivity reflectingActivity = new(name, description);
+                    reflectingActivity.StartActivity();
+                    AddLogToTextFile(reflectingActivity.GetEndingMessage());
                     break;
                 case 9:
                     Console.WriteLine("Goodbye, comeback soon!");
                     Console.WriteLine();
+                    break;
+                case 8:
+                    Console.WriteLine("History Logs!");
+                    Console.WriteLine();
+                    ShowLogsFromTexFile();
+                    Console.WriteLine();
+                    Console.Write("Press enter to continue...");
+                    Console.ReadLine();
+                    Console.Clear();
                     break;
                 default:
                     Console.WriteLine("Please enter a valid option");
@@ -54,6 +74,7 @@ class Program
 2. Listing Activity.
 3. Reflecting Activity.
 
+8. Show logs.
 9. Quit.
 ";
 
@@ -67,6 +88,30 @@ class Program
         Console.Write($"{prompt} ");
         string userInput = Console.ReadLine();
         return userInput;
+    }
+
+    // Function to write to TXT file and populate entries
+    static void AddLogToTextFile(string log)
+    // Exceeding Requirements: Add log to file after activity has been completed
+    {
+        string fileName = "logs.txt";
+        using StreamWriter outputFile = new(fileName, true);
+        DateTime theCurrentTime = DateTime.Now;
+        string dateText = $"{theCurrentTime.ToShortDateString()} @ {theCurrentTime.ToShortTimeString()}";
+        outputFile.WriteLine($"{dateText}: {log}");
+    }
+
+    // Function to read from TXT file and populate entries
+    static void ShowLogsFromTexFile()
+    // Exceeding Requirements: Reading logs from file and display them to screen
+    {
+        string fileName = "logs.txt";
+        string[] lines = File.ReadAllLines(fileName);
+        string[] newLines = lines.ToArray();
+        foreach (string line in newLines)
+        {
+            Console.WriteLine(line);
+        }
     }
 
 }
