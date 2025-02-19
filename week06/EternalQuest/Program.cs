@@ -4,15 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Exceeding Requirements Adding a GoalConverter Class to handle JSON serialization and deserialization expoert and import
         DisplayWelcome();
-
         GoalManager goalManager = new();
         goalManager.Start();
-
-        // // goalManager.SaveGoals("goals.json");
-
-        // goalManager.LoadGoals("goals.json");
-        // goalManager.ListGoalDetails();
     }
 
     static void DisplayWelcome()

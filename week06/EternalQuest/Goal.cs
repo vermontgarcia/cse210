@@ -6,6 +6,8 @@ public abstract class Goal
   private string _shortName;
   private string _description;
   private int _points;
+
+  // Exceeding Requirements Adding a property to keep trac of score
   private int _earnedPoints;
 
   public Goal(string name, string description, int points)
