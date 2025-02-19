@@ -3,12 +3,10 @@ using System.Text.Json;
 public class GoalManager
 {
   private List<Goal> _goals;
-  // private int _score;
 
   public GoalManager()
   {
     _goals = [];
-    // _score = 0;
   }
 
   public void Start()
