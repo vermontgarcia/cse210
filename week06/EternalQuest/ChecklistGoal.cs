@@ -58,6 +58,7 @@ public class ChecklistGoal : Goal
         pointsToAdd = pointsToAdd + _bonus;
       }
       EarnedPoints = EarnedPoints + pointsToAdd;
+      Console.WriteLine();
       Console.WriteLine($"Congratulations, you have earned {pointsToAdd} points");
     }
   }

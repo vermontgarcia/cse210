@@ -29,6 +29,7 @@ public class SimpleGoal : Goal
     {
       _isComplete = true;
       EarnedPoints = EarnedPoints + Points;
+      Console.WriteLine();
       Console.WriteLine($"Congratulations, you have earned {Points} points");
     }
   }

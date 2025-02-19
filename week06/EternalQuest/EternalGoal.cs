@@ -16,6 +16,7 @@ public class EternalGoal : Goal
   public override void RecordEvent()
   {
     EarnedPoints = EarnedPoints + Points;
+    Console.WriteLine();
     Console.WriteLine($"Congratulations, you have earned {Points} points");
   }
 }
