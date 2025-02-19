@@ -1,3 +1,5 @@
+using System.Reflection.Metadata.Ecma335;
+
 public class ChecklistGoal : Goal
 {
   private int _amountCompleted;
@@ -30,7 +32,7 @@ public class ChecklistGoal : Goal
 
   public override string GetStringRepresentation()
   {
-    throw new NotImplementedException();
+    return $"ChecklistGoal|{Name}|{Description}|{Points}|{EarnedPoints}|{AmountCompleted}|{Target}|{Bonus}";
   }
 
   public override bool IsCompleted()
@@ -47,6 +49,21 @@ public class ChecklistGoal : Goal
 
   public override void RecordEvent()
   {
-    _amountCompleted++;
+    if (!IsCompleted())
+    {
+      int pointsToAdd = Points;
+      _amountCompleted++;
+      if (_amountCompleted == Target)
+      {
+        pointsToAdd = pointsToAdd + _bonus;
+      }
+      EarnedPoints = EarnedPoints + pointsToAdd;
+      Console.WriteLine($"Congratulations, you have earned {pointsToAdd} points");
+    }
+  }
+
+  public override string GetDetailsString()
+  {
+    return $"{base.GetDetailsString()} - Completed {_amountCompleted}/{Target}";
   }
 }
