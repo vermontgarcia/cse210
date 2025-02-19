@@ -1,4 +1,3 @@
-using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -9,12 +8,9 @@ public class GoalConverter : JsonConverter<Goal>
     using (JsonDocument doc = JsonDocument.ParseValue(ref reader))
     {
       JsonElement root = doc.RootElement;
-
       if (!root.TryGetProperty("Type", out JsonElement typeElement))
         throw new JsonException("Missing 'Type' property for polymorphic deserialization.");
-
       string type = typeElement.GetString();
-
       return type switch
       {
         "SimpleGoal" => JsonSerializer.Deserialize<SimpleGoal>(root.GetRawText(), options),
@@ -28,10 +24,8 @@ public class GoalConverter : JsonConverter<Goal>
   public override void Write(Utf8JsonWriter writer, Goal value, JsonSerializerOptions options)
   {
     writer.WriteStartObject();
-
     // Store the type for deserialization
     writer.WriteString("Type", value.GetType().Name);
-
     // Serialize the actual object
     string jsonString = JsonSerializer.Serialize(value, value.GetType(), options);
     using (JsonDocument doc = JsonDocument.Parse(jsonString))
