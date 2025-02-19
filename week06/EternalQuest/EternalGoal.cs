@@ -4,17 +4,18 @@ public class EternalGoal : Goal
 
   public override string GetStringRepresentation()
   {
-    throw new NotImplementedException();
+    return $"EternalGoal|{Name}|{Description}|{Points}|{EarnedPoints}";
   }
 
   public override bool IsCompleted()
   {
-    // TODO: Review IsCompleted implementation
-    return true;
+    // Always will be false since it is Eternal
+    return false;
   }
 
   public override void RecordEvent()
   {
-    throw new NotImplementedException();
+    EarnedPoints = EarnedPoints + Points;
+    Console.WriteLine($"Congratulations, you have earned {Points} points");
   }
 }
