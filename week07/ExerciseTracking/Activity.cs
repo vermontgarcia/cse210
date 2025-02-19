@@ -2,7 +2,6 @@ public abstract class Activity
 {
   private DateTime _dateTime;
   private double _minutes;
-
   private string _name;
 
   public Activity(string name, double minutes)
