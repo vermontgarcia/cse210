@@ -6,6 +6,7 @@ public abstract class Goal
   private string _shortName;
   private string _description;
   private int _points;
+  private int _earnedPoints;
 
   public Goal(string name, string description, int points)
   {
@@ -14,6 +15,7 @@ public abstract class Goal
     _shortName = titleCase;
     _description = description;
     _points = points;
+    _earnedPoints = 0;
   }
 
   public string Name
@@ -37,6 +39,11 @@ public abstract class Goal
   {
     get { return _points; }
     set { _points = value; }
+  }
+  public int EarnedPoints
+  {
+    get { return _earnedPoints; }
+    set { _earnedPoints = value; }
   }
 
   public abstract void RecordEvent();
