@@ -15,7 +15,7 @@ public class SimpleGoal : Goal
 
   public override string GetStringRepresentation()
   {
-    throw new NotImplementedException();
+    return $"SimpleGoal|{Name}|{Description}|{Points}|{EarnedPoints}|{IsComplete}";
   }
 
   public override bool IsCompleted()
@@ -25,6 +25,11 @@ public class SimpleGoal : Goal
 
   public override void RecordEvent()
   {
-    throw new NotImplementedException();
+    if (!IsCompleted())
+    {
+      _isComplete = true;
+      EarnedPoints = EarnedPoints + Points;
+      Console.WriteLine($"Congratulations, you have earned {Points} points");
+    }
   }
 }
